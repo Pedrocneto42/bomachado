@@ -1,0 +1,12 @@
+# Arquivos de configuração privada
+.env
+
+# Dependências PHP
+/vendor/
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Configurações locais do editor
+.vscode/
