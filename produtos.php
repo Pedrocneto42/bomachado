@@ -1,5 +1,6 @@
 <?php
 $titulo = "Produtos - Bom Achado Variedades";
+$whatsapp = "+559999999999";
 
 $arquivo = file_get_contents('dados/produtos.json');
 $produtos = json_decode($arquivo, true);
@@ -44,9 +45,9 @@ include 'includes/menu.php';
                             Estoque: <?php echo (int) $produto['estoque']; ?>
                         </p>
 
-                        <a href="#" class="btn btn-primary mt-auto">
-                            Tenho interesse
-                        </a>
+                        <?php $mensagem = "Olá! Tenho interesse no produto: " . $produto['nome']; $linkWhatsapp = "https://wa.me/" . $whatsapp . "?text=" . urlencode($mensagem);?>
+                        <a href="<?php echo htmlspecialchars($linkWhatsapp); ?>"
+                        class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer"> Tenho interesse</a>
 
                     </div>
 

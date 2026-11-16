@@ -16,9 +16,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
 
-        <a class="navbar-brand" href="index.php">
-            Bom Achado
-        </a>
+        <a class="navbar-brand" href="index.php"> <img src="img/logo.png"
+         alt="Bom Achado Variedades"
+         class="logo-loja"></a>
 
         <button class="navbar-toggler" type="button"
             data-bs-toggle="collapse"

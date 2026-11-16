@@ -1,10 +1,18 @@
 body {
     background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Menu de navegação */
 .navbar {
     background-color: #1F3A5F !important;
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
 }
 
 /* Rodapé */
@@ -18,4 +26,140 @@ footer {
     height: 180px;
     object-fit: contain;
     padding: 10px;
+}
+
+.carousel-item img {
+    height: 320px;
+    object-fit: cover;
+}
+
+/* Carrossel da página inicial */
+
+#carouselLoja .carousel-item img {
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Texto centralizado no banner */
+
+#carouselLoja .carousel-caption {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    left: 40%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+#carouselLoja .carousel-caption h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#carouselLoja .carousel-caption p {
+    font-size: 17px;
+}
+
+/* Ajustes para celulares */
+/* Carrossel da página inicial */
+#carouselLoja {
+    position: relative;
+}
+
+#carouselLoja .carousel-item img {
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Carrossel da página inicial */
+#carouselLoja {
+    position: relative;
+}
+
+#carouselLoja .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Texto e botão centralizados */
+.conteudo-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.conteudo-banner h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.conteudo-banner p {
+    font-size: 17px;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 768px) {
+    #carouselLoja .carousel-item img {
+        height: 300px;
+    }
+
+    .conteudo-banner {
+        width: 90%;
+    }
+
+    .conteudo-banner h1 {
+        font-size: 22px;
+    }
+
+    .conteudo-banner p {
+        font-size: 14px;
+    }
+}
+
+/* Destaque da barra de navegação */
+.navbar {
+    padding: 14px 0;
+    border-bottom: 3px solid #F5C542;
+}
+
+/* Tamanho do futuro logotipo */
+.logo-loja {
+    width: 210px;
+    height: auto;
+}
+
+/* Links do menu */
+.navbar .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    margin-left: 12px;
+    transition: color 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.navbar .nav-link:hover {
+    color: #F5C542;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 768px) {
+    .logo-loja {
+        width: 170px;
+    }
+
+    .navbar .nav-link {
+        margin-left: 0;
+        font-size: 17px;
+    }
 }
