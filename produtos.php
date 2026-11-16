@@ -1,7 +1,11 @@
+
 <?php
 $titulo = "Produtos - Bom Achado Variedades";
-$whatsapp = "+559999999999";
 
+// Número do WhatsApp da loja
+$whatsapp = "";
+
+// Lê os produtos cadastrados no JSON
 $arquivo = file_get_contents('dados/produtos.json');
 $produtos = json_decode($arquivo, true);
 
@@ -38,16 +42,60 @@ include 'includes/menu.php';
                         </p>
 
                         <p>
-                            <strong>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></strong>
+                            <strong>
+                                R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
+                            </strong>
                         </p>
 
-                        <p>
-                            Estoque: <?php echo (int) $produto['estoque']; ?>
-                        </p>
+                        <!-- Verificação do estoque -->
+                        <?php if ($produto['estoque'] > 0) { ?>
 
-                        <?php $mensagem = "Olá! Tenho interesse no produto: " . $produto['nome']; $linkWhatsapp = "https://wa.me/" . $whatsapp . "?text=" . urlencode($mensagem);?>
-                        <a href="<?php echo htmlspecialchars($linkWhatsapp); ?>"
-                        class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer"> Tenho interesse</a>
+                            <p>
+                                Estoque: <?php echo (int) $produto['estoque']; ?>
+                            </p>
+
+                            <p class="text-success">
+                                <strong>Disponível</strong>
+                            </p>
+
+                        <?php } else { ?>
+
+                            <p class="text-danger">
+                                <strong>Produto esgotado</strong>
+                            </p>
+
+                        <?php } ?>
+
+                        <!-- Botão de interesse -->
+                        <?php
+                        $mensagem = "Olá! Tenho interesse no produto: " . $produto['nome'];
+
+                        $linkWhatsapp = "https://wa.me/" . $whatsapp .
+                                        "?text=" . urlencode($mensagem);
+                        ?>
+
+                        <?php if ($produto['estoque'] <= 0) { ?>
+
+                            <button class="btn btn-secondary mt-auto" disabled>
+                                Produto esgotado
+                            </button>
+
+                        <?php } elseif (!empty($whatsapp)) { ?>
+
+                            <a href="<?php echo htmlspecialchars($linkWhatsapp); ?>"
+                               class="btn btn-primary mt-auto"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Tenho interesse
+                            </a>
+
+                        <?php } else { ?>
+
+                            <button class="btn btn-primary mt-auto" disabled>
+                                Tenho interesse
+                            </button>
+
+                        <?php } ?>
 
                     </div>
 
