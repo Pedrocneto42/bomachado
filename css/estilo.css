@@ -1,0 +1,21 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/* Menu de navegação */
+.navbar {
+    background-color: #1F3A5F !important;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1F3A5F;
+    color: white;
+}
+
+/* Imagens dos produtos */
+.card-img-top {
+    height: 180px;
+    object-fit: contain;
+    padding: 10px;
+}

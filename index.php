@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Bom Achado Variedades</title>
-</head>
-<body>
+<?php
+
+$titulo = "Bom Achado Variedades";
+
+include 'includes/menu.php';
+
+?>
+
+<div class="container mt-4">
 
     <h1>Bom Achado Variedades</h1>
 
     <p>Bem-vindo ao nosso projeto!</p>
 
-</body>
-</html>
+</div>
+
+<?php include 'includes/rodape.php'; ?>
